@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aj | L&D Portfolio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+    background: #f4f7fb;
+}
+
+/* NAVBAR */
+nav {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a {
+    text-decoration: none;
+    color: #1b75bc;
+    font-weight: bold;
+}
+
+/* HERO */
+header {
+    background: linear-gradient(120deg, #1b75bc, #6dcff6);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+header h1 { font-size: 42px; margin: 0; }
+header p { font-size: 18px; }
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: white;
+    color: #1b75bc;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECTION */
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* SKILLS */
+.skills span {
+    display: inline-block;
+    background: #e3f2fd;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    background: #1b75bc;
+    color: white;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<header>
+<h1>Hi, I'm Aj</h1>
+<p>L&D Specialist | Power BI | LMS (Cornerstone)</p>
+<a href="#projects" class="btn">View My Work</a>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+<p>
+L&D professional specializing in compliance training, LMS management, and data-driven reporting. 
+I build Power BI dashboards to track performance, identify risk, and improve learning outcomes.
+</p>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills</h2>
+<div class="card skills">
+<span>Power BI</span>
+<span>Excel</span>
+<span>Cornerstone LMS</span>
+<span>Articulate 360</span>
+<span>SharePoint</span>
+<span>Training Analytics</span>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+
+<div class="card">
+<h3>Compliance Dashboard</h3>
+<p>Built a Power BI dashboard tracking completion rates, at-risk users, and aging buckets.</p>
+</div>
+
+<div class="card">
+<h3>At-Risk Analysis</h3>
+<p>Developed logic to identify overdue learners and improve compliance tracking.</p>
+</div>
+
+<div class="card">
+<h3>LMS Campaign Management</h3>
+<p>Managed training assignments, communications, and reporting for large learner groups.</p>
+</div>
+
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2>Experience</h2>
+<div class="card">
+<h3>Magnit Global – Training Coordinator</h3>
+<p>
+Managed LMS operations, built dashboards, handled compliance reporting, and collaborated 
+with stakeholders to improve training completion.
+</p>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+<p>Email: your@email.com</p>
+<p>LinkedIn: your-linkedin-link</p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Aj | Portfolio</p>
+</footer>
+
+</body>
+</html>
