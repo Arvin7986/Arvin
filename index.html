@@ -1,5 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aj Portfolio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: #f5f5f5;
+}
+
+.menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT */
+.left {
+    width: 55%;
+    background: linear-gradient(135deg, #0f1c3f, #142850);
+    color: white;
+    padding: 80px;
+}
+
+.tag {
+    color: #4ade80;
+    font-size: 12px;
+}
+
+.left h1 {
+    font-size: 70px;
+    margin: 10px 0;
+}
+
+.left h1 span {
+    color: #60a5fa;
+    font-style: italic;
+}
+
+.role {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #cbd5e1;
+}
+
+.desc {
+    margin-top: 20px;
+    max-width: 400px;
+    color: #94a3b8;
+}
+
+/* BUTTONS */
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 20px;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.primary {
+    background: #3b82f6;
+    color: white;
+}
+
+.outline {
+    border: 1px solid white;
+    color: white;
+}
+
+/* RIGHT */
+.right {
+    width: 45%;
+    background: #e5e5e5;
+    padding: 80px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card {
+    padding: 40px;
+    text-align: center;
+}
+
+.light {
+    background: #f8f8f8;
+}
+
+.dark {
+    background: #0f1c3f;
+    color: white;
+}
+
+.location {
+    margin-top: 20px;
+    color: #64748b;
+}
+</style>
+</head>
+
+<body>
+
 <nav class="navbar">
-    <div class="logo">ARVIN</div>
+    <div class="logo">Aj</div>
     <div class="menu">
         <a href="#">SKILLS</a>
         <a href="#">PROJECTS</a>
@@ -10,7 +136,6 @@
 
 <section class="hero">
 
-    <!-- LEFT SIDE -->
     <div class="left">
         <p class="tag">● AVAILABLE FOR OPPORTUNITIES</p>
 
@@ -23,16 +148,15 @@
 
         <p class="desc">
             L&D professional specializing in compliance training, LMS operations, 
-            and Power BI dashboards. I drive learning outcomes through data-driven insights.
+            and Power BI dashboards.
         </p>
 
         <div class="buttons">
-            <a class="btn primary" href="#">View Projects ↓</a>
+            <a class="btn primary" href="#">View Projects</a>
             <a class="btn outline" href="#">Download Resume</a>
         </div>
     </div>
 
-    <!-- RIGHT SIDE -->
     <div class="right">
         <div class="grid">
             <div class="card light">
@@ -57,3 +181,6 @@
     </div>
 
 </section>
+
+</body>
+</html>
