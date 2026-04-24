@@ -1,140 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV | Portfolio</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
-}
-
-/* NAVBAR */
-nav {
-    position: fixed;
-    width: 100%;
-    background: #020617;
-    padding: 25px;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* HERO */
-header {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(120deg, #1b75bc, #020617);
-    text-align: center;
-}
-
-header h1 {
-    font-size: 50px;
-    margin: 0;
-}
-
-header p {
-    font-size: 20px;
-    color: #cbd5f5;
-}
-
-/* SECTION */
-section {
-    padding: 80px 20px;
-    max-width: 900px;
-    margin: auto;
-}
-
-h2 {
-    border-bottom: 2px solid #1b75bc;
-    padding-bottom: 5px;
-}
-
-/* CARD */
-.card {
-    background: #020617;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    background: #1e293b;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: black;
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
+<nav class="navbar">
+    <div class="logo">Aj</div>
+    <div class="menu">
+        <a href="#">SKILLS</a>
+        <a href="#">PROJECTS</a>
+        <a href="#">EDUCATION</a>
+        <a href="#">CONTACT</a>
+    </div>
 </nav>
 
-<header>
-<h1>Hi, I'm ARVIN DSOUZA</h1>
-<p>L&D Specialist | Power BI | LMS</p>
-</header>
+<section class="hero">
 
-<section id="about">
-<h2>About Me</h2>
-<p>
-L&D professional with experience in compliance training, LMS management,
-and Power BI dashboards. I focus on data-driven learning insights and process improvement.
-</p>
+    <!-- LEFT SIDE -->
+    <div class="left">
+        <p class="tag">● AVAILABLE FOR OPPORTUNITIES</p>
+
+        <h1>
+            Aj<br>
+            <span>Arvin</span>
+        </h1>
+
+        <p class="role">L&D Specialist · Data & Learning Analytics</p>
+
+        <p class="desc">
+            L&D professional specializing in compliance training, LMS operations, 
+            and Power BI dashboards. I drive learning outcomes through data-driven insights.
+        </p>
+
+        <div class="buttons">
+            <a class="btn primary" href="#">View Projects ↓</a>
+            <a class="btn outline" href="#">Download Resume</a>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+        <div class="grid">
+            <div class="card light">
+                <h2>5+</h2>
+                <p>PROJECTS</p>
+            </div>
+            <div class="card dark">
+                <h2>10+</h2>
+                <p>TOOLS USED</p>
+            </div>
+            <div class="card dark">
+                <h2>3+</h2>
+                <p>YEARS EXP</p>
+            </div>
+            <div class="card light">
+                <h2>95%</h2>
+                <p>COMPLIANCE RATE</p>
+            </div>
+        </div>
+
+        <p class="location">● Chennai, India</p>
+    </div>
+
 </section>
-
-<section id="projects">
-<h2>Projects</h2>
-
-<div class="card">
-<h3>Compliance Dashboard</h3>
-<p>Tracked completion rates, at-risk users, and aging buckets.</p>
-</div>
-
-<div class="card">
-<h3>At-Risk Analysis</h3>
-<p>Developed logic to identify overdue learners.</p>
-</div>
-
-</section>
-
-<section id="skills">
-<h2>Skills</h2>
-<p>Power BI • Excel • Cornerstone LMS • Articulate 360 • SharePoint</p>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: your@email.com</p>
-<p>LinkedIn: your-link</p>
-</section>
-
-<footer>
-<p>© 2026 Aj</p>
-</footer>
-
-</body>
-</html>
