@@ -114,6 +114,11 @@ body::before {
     margin-right: 10px;
     text-decoration: none;
     display: inline-block;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 20px rgba(96,165,250,0.5);
 }
 
 .primary { background: #238636; color: white; }
@@ -216,6 +221,18 @@ body::before {
     border-radius: 6px;
 }
 
+/* ===== SCROLL ANIMATION ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ===== MOBILE ===== */
 @media (max-width: 900px) {
     .hero { flex-direction: column; }
@@ -229,7 +246,6 @@ body::before {
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
     <div>CV</div>
     <div class="menu">
@@ -240,7 +256,7 @@ body::before {
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero reveal">
 
     <div class="left">
         <p class="tag">
@@ -263,27 +279,26 @@ body::before {
         </div>
     </div>
 
-    <!-- RIGHT SIDE -->
     <div class="right">
         <div class="stats-grid">
 
             <div class="stat-card">
-                <h2>5+</h2>
+                <h2 class="counter" data-target="5">0+</h2>
                 <p>PROJECTS</p>
             </div>
 
             <div class="stat-card">
-                <h2>10+</h2>
+                <h2 class="counter" data-target="10">0+</h2>
                 <p>TOOLS USED</p>
             </div>
 
             <div class="stat-card">
-                <h2>7+</h2>
+                <h2 class="counter" data-target="7">0+</h2>
                 <p>YEARS EXP</p>
             </div>
 
             <div class="stat-card">
-                <h2>95%</h2>
+                <h2 class="counter" data-target="95">0%</h2>
                 <p>COMPLIANCE RATE</p>
             </div>
 
@@ -295,7 +310,7 @@ body::before {
 </section>
 
 <!-- SKILLS -->
-<section class="skills-section">
+<section class="skills-section reveal">
 
     <p class="skills-sub">WHAT I WORK WITH</p>
     <h2 class="skills-title">Technical Skills</h2>
@@ -304,41 +319,41 @@ body::before {
 
         <div class="skill">
             <div class="icon-box">☁️</div>
-            <h4>LMS PLATFORMS</h4>
+            <h4>CLOUD PLATFORMS</h4>
             <div class="tags">
-                <span>CORNERSTONE</span><span>iLMS</span><span>Nittio</span>
+                <span>AWS EC2</span><span>AWS RDS</span><span>AWS S3</span>
             </div>
         </div>
 
         <div class="skill">
             <div class="icon-box">⚙️</div>
-            <h4>ADV EXCEL</h4>
+            <h4>DEVOPS</h4>
             <div class="tags">
-                <span>Pivot Table</span><span>Vloolup</span><span>Macros</span>
+                <span>CI/CD</span><span>GitHub Actions</span>
             </div>
         </div>
 
         <div class="skill">
             <div class="icon-box">📦</div>
-            <h4>DASHBOARDS</h4>
+            <h4>CONTAINERS</h4>
             <div class="tags">
-                <span>POWERBI</span><span>EXCEL</span><span>Spreadsheets</span>
+                <span>Docker</span><span>Nginx</span>
             </div>
         </div>
 
         <div class="skill">
             <div class="icon-box">{ }</div>
-            <h4>SERVICENOW</h4>
+            <h4>PROGRAMMING</h4>
             <div class="tags">
-                <span>TICKETS</span><span>SLA</span>
+                <span>Python</span><span>Power BI</span>
             </div>
         </div>
 
         <div class="skill">
             <div class="icon-box">🔗</div>
-            <h4>INSTRUCTIONAL DESIGN</h4>
+            <h4>VERSION CONTROL</h4>
             <div class="tags">
-                <span>STORYLINE</span><span>RISE</span><span>CAMTASIA</span><span>CANVA</span><span>FREEPIK</span>
+                <span>Git</span><span>GitHub</span>
             </div>
         </div>
 
@@ -353,6 +368,53 @@ body::before {
     </div>
 
 </section>
+
+<!-- ===== JS ===== -->
+<script>
+// COUNTERS
+const counters = document.querySelectorAll('.counter');
+
+const animateCounters = () => {
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+
+    const update = () => {
+      const increment = target / 50;
+      count += increment;
+
+      if (count < target) {
+        counter.innerText = Math.floor(count) + (target === 95 ? '%' : '+');
+        requestAnimationFrame(update);
+      } else {
+        counter.innerText = target + (target === 95 ? '%' : '+');
+      }
+    };
+
+    update();
+  });
+};
+
+const observer = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    animateCounters();
+  }
+});
+
+observer.observe(document.querySelector('.stats-grid'));
+
+// SCROLL REVEAL
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add('active');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
