@@ -8,11 +8,12 @@
 <style>
 
 /* ===== GLOBAL ===== */
+html { scroll-behavior: smooth; }
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     color: white;
-
     background:
       radial-gradient(80% 50% at 50% 0%, rgba(56,139,253,0.25), transparent 70%),
       radial-gradient(60% 40% at 80% 0%, rgba(88,166,255,0.2), transparent 70%),
@@ -20,145 +21,129 @@ body {
       #0d1117;
 }
 
-/* ===== TOP LINE ===== */
+/* TOP LINE */
 body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, #4ade80, #60a5fa, #4ade80);
-    background-size: 200% 100%;
-    animation: moveLine 3s linear infinite;
-    z-index: 9999;
+    content:"";
+    position:fixed;
+    top:0;
+    width:100%;
+    height:2px;
+    background:linear-gradient(90deg,#4ade80,#60a5fa,#4ade80);
+    background-size:200% 100%;
+    animation:moveLine 3s linear infinite;
 }
-
 @keyframes moveLine {
-    0% { background-position: 0%; }
-    100% { background-position: 200%; }
+    0% {background-position:0%;}
+    100% {background-position:200%;}
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 60px;
+    position: sticky;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    padding:20px 60px;
+    background: rgba(13,17,23,0.8);
+    backdrop-filter: blur(10px);
+    z-index:1000;
 }
 
 .menu a {
-    margin-left: 25px;
-    text-decoration: none;
-    color: #c9d1d9;
-    font-size: 14px;
+    margin-left:20px;
+    color:#c9d1d9;
+    text-decoration:none;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero {
-    display: flex;
-    justify-content: space-between;
-    padding: 80px 60px;
-    flex-wrap: wrap;
+    display:flex;
+    justify-content:space-between;
+    padding:80px 60px;
+    flex-wrap:wrap;
 }
 
-.left { width: 55%; }
-.right { width: 40%; }
+.left { width:55%; }
+.right { width:40%; }
 
 /* TAG */
 .tag {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #4ade80;
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    display:flex;
+    gap:8px;
+    color:#4ade80;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
 }
 
-/* BLINK DOT */
 .status-dot {
-    width: 10px;
-    height: 10px;
-    background: #4ade80;
-    border-radius: 2px;
-    box-shadow: 0 0 10px #4ade80;
-    animation: pulse 1.5s infinite;
+    width:10px;height:10px;
+    background:#4ade80;
+    box-shadow:0 0 10px #4ade80;
+    animation:pulse 1.5s infinite;
 }
-
 @keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.3); opacity: 0.6; }
-    100% { transform: scale(1); opacity: 1; }
+    50% {transform:scale(1.3); opacity:0.6;}
 }
 
 /* TEXT */
-.left h1 {
-    font-size: 70px;
-    margin: 10px 0;
-}
+.left h1 { font-size:70px; }
+.left h1 span { color:#60a5fa; text-shadow:0 0 40px rgba(96,165,250,0.6); }
 
-.left h1 span {
-    color: #60a5fa;
-    text-shadow: 0 0 40px rgba(96,165,250,0.6);
-}
+.role { color:#cbd5e1; }
+.desc { color:#94a3b8; }
 
-.role { color: #cbd5e1; }
-.desc { color: #94a3b8; max-width: 420px; }
-
-/* BUTTONS */
-.buttons { margin-top: 20px; }
-
+/* BUTTON */
 .btn {
-    padding: 12px 20px;
-    border-radius: 6px;
-    margin-right: 10px;
-    text-decoration: none;
-    display: inline-block;
-    transition: 0.3s;
+    padding:10px 18px;
+    border-radius:6px;
+    margin-right:10px;
+    text-decoration:none;
+    transition:.3s;
 }
+.btn:hover { box-shadow:0 0 20px rgba(96,165,250,0.5); }
 
-.btn:hover {
-    box-shadow: 0 0 20px rgba(96,165,250,0.5);
-}
+.primary { background:#238636; color:white; }
+.outline { border:1px solid #c9d1d9; color:white; }
 
-.primary { background: #238636; color: white; }
-.outline { border: 1px solid #c9d1d9; color: white; }
-
-/* ===== RIGHT STATS ===== */
+/* STATS */
 .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
 .stat-card {
-    padding: 30px;
-    text-align: center;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(12px);
-    transition: 0.3s;
+    padding:30px;
+    text-align:center;
+    border-radius:12px;
+    background:rgba(255,255,255,0.05);
 }
 
-.stat-card:hover {
-    transform: translateY(-6px);
-    background: rgba(255,255,255,0.08);
+.stat-card h2 { font-size:28px; }
+.stat-card p { color:#94a3b8; }
+
+/* ===== SKILLS ===== */
+.skills-section { padding:100px 80px; }
+
+.skills-sub { color:#4ade80; font-size:12px; letter-spacing:2px; }
+.skills-title { font-size:48px; }
+
+.skills-box {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border:1px solid rgba(255,255,255,0.08);
 }
 
-.stat-card h2 {
-    margin: 0;
-    font-size: 28px;
+.skill {
+    padding:40px;
+    border-right:1px solid rgba(255,255,255,0.08);
+    border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-.stat-card p {
-    color: #94a3b8;
-}
+.skill:nth-child(3n) { border-right:none; }
 
-.location {
-    margin-top: 20px;
-    color: #8b949e;
-}
-    /* ===== EXPERIENCE ===== */
+/* ===== EXPERIENCE ===== */
 .experience-section { padding:100px 80px; }
 
 .exp-sub { color:#4ade80; font-size:12px; letter-spacing:2px; }
@@ -189,86 +174,53 @@ body::before {
 
 .timeline-content ul { padding-left:18px; }
 
-/* ===== SKILLS ===== */
-.skills-section {
-    padding: 100px 80px;
+/* ===== PROJECTS ===== */
+.projects-section { padding:100px 80px; }
+
+.proj-sub { color:#4ade80; font-size:12px; letter-spacing:2px; }
+.proj-title { font-size:48px; }
+
+.projects-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-.skills-sub {
-    color: #4ade80;
-    font-size: 12px;
-    letter-spacing: 2px;
+.project-card {
+    padding:30px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.05);
+    transition:.3s;
 }
 
-.skills-title {
-    font-size: 48px;
-    margin-top: 10px;
+.project-card:hover {
+    transform:translateY(-8px);
+    background:rgba(255,255,255,0.08);
 }
 
-/* GRID */
-.skills-box {
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border: 1px solid rgba(255,255,255,0.08);
+/* ===== CONTACT ===== */
+.contact-section {
+    text-align:center;
+    padding:100px 20px;
 }
 
-.skill {
-    padding: 40px;
-    border-right: 1px solid rgba(255,255,255,0.08);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.skill:nth-child(3n) {
-    border-right: none;
-}
-
-/* ICON */
-.icon-box {
-    width: 40px;
-    height: 40px;
-    background: rgba(59,130,246,0.2);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.skill h4 {
-    font-size: 13px;
-    color: #94a3b8;
-}
-
-/* TAGS */
-.tags span {
-    display: inline-block;
-    padding: 6px 10px;
-    margin: 5px;
-    font-size: 12px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 6px;
-}
-
-/* ===== SCROLL ANIMATION ===== */
+/* REVEAL */
 .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+    opacity:0;
+    transform:translateY(40px);
+    transition:.8s;
 }
-
 .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+    opacity:1;
+    transform:translateY(0);
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 900px) {
-    .hero { flex-direction: column; }
-    .left, .right { width: 100%; }
-    .skills-box { grid-template-columns: 1fr; }
-    .skill { border-right: none; }
+/* MOBILE */
+@media (max-width:900px) {
+    .hero { flex-direction:column; }
+    .left,.right { width:100%; }
+    .skills-box,
+    .projects-grid { grid-template-columns:1fr; }
 }
 
 </style>
@@ -277,129 +229,57 @@ body::before {
 <body>
 
 <nav class="navbar">
-    <div>CV</div>
-    <div class="menu">
-        <a href="#">SKILLS</a>
-        <a href="#">PROJECTS</a>
-        <a href="#">CONTACT</a>
-    </div>
+<div>CV</div>
+<div class="menu">
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero reveal">
 
-    <div class="left">
-        <p class="tag">
-            <span class="status-dot"></span>
-            AVAILABLE FOR OPPORTUNITIES
-        </p>
+<div class="left">
+<p class="tag"><span class="status-dot"></span> AVAILABLE FOR OPPORTUNITIES</p>
 
-        <h1><span>Arvin Dsouza</span></h1>
+<h1><span>Arvin Dsouza</span></h1>
 
-        <p class="role">L&D Specialist · Data & Learning Analytics</p>
+<p class="role">L&D Specialist · Data & Learning Analytics</p>
 
-        <p class="desc">
-            L&D professional specializing in compliance training, LMS operations, 
-            and Power BI dashboards.
-        </p>
+<p class="desc">L&D professional specializing in LMS, compliance, and analytics.</p>
 
-        <div class="buttons">
-            <a class="btn primary" href="#">View Skills</a>
-            <a class="btn outline" href="#">Download Resume</a>
-        </div>
-    </div>
+<a class="btn primary">View Projects</a>
+<a class="btn outline" href="resume.pdf" onclick="trackResume()">Download Resume</a>
+</div>
 
-    <div class="right">
-        <div class="stats-grid">
-
-            <div class="stat-card">
-                <h2 class="counter" data-target="5">0+</h2>
-                <p>PROJECTS</p>
-            </div>
-
-            <div class="stat-card">
-                <h2 class="counter" data-target="10">0+</h2>
-                <p>TOOLS USED</p>
-            </div>
-
-            <div class="stat-card">
-                <h2 class="counter" data-target="7">0+</h2>
-                <p>YEARS EXP</p>
-            </div>
-
-            <div class="stat-card">
-                <h2 class="counter" data-target="95">0%</h2>
-                <p>COMPLIANCE RATE</p>
-            </div>
-
-        </div>
-
-        <p class="location">● Bengaluru, India</p>
-    </div>
+<div class="right">
+<div class="stats-grid">
+<div class="stat-card"><h2 class="counter" data-target="5">0+</h2><p>Projects</p></div>
+<div class="stat-card"><h2 class="counter" data-target="10">0+</h2><p>Tools</p></div>
+<div class="stat-card"><h2 class="counter" data-target="7">0+</h2><p>Years</p></div>
+<div class="stat-card"><h2 class="counter" data-target="95">0%</h2><p>Compliance</p></div>
+</div>
+</div>
 
 </section>
 
 <!-- SKILLS -->
-<section class="skills-section reveal">
-
-    <p class="skills-sub">WHAT I WORK WITH</p>
-    <h2 class="skills-title">Technical Skills</h2>
-
-    <div class="skills-box">
-
-        <div class="skill">
-            <div class="icon-box">☁️</div>
-            <h4>CLOUD PLATFORMS</h4>
-            <div class="tags">
-                <span>AWS EC2</span><span>AWS RDS</span><span>AWS S3</span>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="icon-box">⚙️</div>
-            <h4>DEVOPS</h4>
-            <div class="tags">
-                <span>CI/CD</span><span>GitHub Actions</span>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="icon-box">📦</div>
-            <h4>CONTAINERS</h4>
-            <div class="tags">
-                <span>Docker</span><span>Nginx</span>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="icon-box">{ }</div>
-            <h4>PROGRAMMING</h4>
-            <div class="tags">
-                <span>Python</span><span>Power BI</span>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="icon-box">🔗</div>
-            <h4>VERSION CONTROL</h4>
-            <div class="tags">
-                <span>Git</span><span>GitHub</span>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="icon-box">■</div>
-            <h4>OPERATING SYSTEMS</h4>
-            <div class="tags">
-                <span>Windows</span><span>Linux</span>
-            </div>
-        </div>
-
-    </div>
-
+<section id="skills" class="skills-section reveal">
+<p class="skills-sub">WHAT I WORK WITH</p>
+<h2 class="skills-title">Technical Skills</h2>
+<div class="skills-box">
+<div class="skill">Cloud (AWS, Azure)</div>
+<div class="skill">DevOps</div>
+<div class="skill">Docker</div>
+<div class="skill">Python / Power BI</div>
+<div class="skill">GitHub</div>
+<div class="skill">Linux</div>
+</div>
 </section>
 
-    <!-- EXPERIENCE -->
+<!-- EXPERIENCE -->
 <section id="experience" class="experience-section reveal">
 <p class="exp-sub">WHERE I’VE WORKED</p>
 <h2 class="exp-title">Experience</h2>
@@ -434,52 +314,48 @@ body::before {
 </div>
 </section>
 
-<!-- ===== JS ===== -->
+<!-- PROJECTS -->
+<section id="projects" class="projects-section reveal">
+<p class="proj-sub">WHAT I’VE BUILT</p>
+<h2 class="proj-title">Projects</h2>
+
+<div class="projects-grid">
+<div class="project-card">
+<h3>Compliance Dashboard</h3>
+<p>Power BI dashboard for 3000+ users.</p>
+</div>
+
+<div class="project-card">
+<h3>LMS Automation</h3>
+<p>Automated reporting workflows.</p>
+</div>
+
+<div class="project-card">
+<h3>Privacy Training</h3>
+<p>Global IT security training program.</p>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section reveal">
+<h2>Let’s Work Together</h2>
+<p>Open to L&D, LMS, and Analytics roles.</p>
+<a href="mailto:yourmail@email.com" class="btn primary">Contact Me</a>
+</section>
+
 <script>
 // COUNTERS
-const counters = document.querySelectorAll('.counter');
-
-const animateCounters = () => {
-  counters.forEach(counter => {
-    const target = +counter.getAttribute('data-target');
-    let count = 0;
-
-    const update = () => {
-      const increment = target / 50;
-      count += increment;
-
-      if (count < target) {
-        counter.innerText = Math.floor(count) + (target === 95 ? '%' : '+');
-        requestAnimationFrame(update);
-      } else {
-        counter.innerText = target + (target === 95 ? '%' : '+');
-      }
-    };
-
-    update();
-  });
-};
-
-const observer = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting) {
-    animateCounters();
-  }
+document.querySelectorAll('.counter').forEach(counter=>{
+let t=+counter.dataset.target,c=0;
+(function u(){
+c+=t/50;
+if(c<t){counter.innerText=Math.floor(c)+(t==95?'%':'+');requestAnimationFrame(u);}
+else{counter.innerText=t+(t==95?'%':'+');}
+})();
 });
 
-observer.observe(document.querySelector('.stats-grid'));
-
-// SCROLL REVEAL
-const reveals = document.querySelectorAll('.reveal');
-
-window.addEventListener('scroll', () => {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add('active');
-    }
-  });
-});
-    // REVEAL + TIMELINE
+// REVEAL + TIMELINE
 window.addEventListener('scroll',()=>{
 document.querySelectorAll('.reveal').forEach(el=>{
 if(el.getBoundingClientRect().top < window.innerHeight-100)
@@ -495,6 +371,11 @@ el.style.transform="translateY(0)";
 }
 });
 });
+
+// TRACK
+function trackResume(){
+console.log("Resume clicked");
+}
 </script>
 
 </body>
