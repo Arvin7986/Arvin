@@ -41,9 +41,19 @@ body::before {
 
 /* ===== NAVBAR ===== */
 .navbar {
+    position: fixed; /* 👈 THIS IS THE KEY */
+    top: 0;
+    left: 0;
+    width: 100%;
+
     display: flex;
     justify-content: space-between;
     padding: 20px 60px;
+
+    background: rgba(13,17,23,0.85); /* dark transparent */
+    backdrop-filter: blur(10px); /* glass effect */
+
+    z-index: 1000;
 }
 
 .menu a {
