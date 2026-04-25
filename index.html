@@ -282,18 +282,20 @@ body::before {
     .skill { border-right: none; }
 }
 .connect-section {
-    background: #FAF3E5;
-    color: #0d1117;
-    padding: 100px 60px;
+    background: transparent; /* 👈 matches main theme */
+    color: white;
+    padding: 120px 80px;
 }
 
+/* CONTAINER ALIGNMENT */
 .connect-container {
     display: flex;
-    gap: 60px;
+    gap: 80px;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
-/* LEFT */
+/* LEFT SIDE */
 .connect-left {
     width: 45%;
 }
@@ -305,34 +307,56 @@ body::before {
 }
 
 .connect-title {
-    font-size: 50px;
-    margin: 10px 0;
+    font-size: 56px;
+    margin: 10px 0 20px;
 }
 
 .connect-desc {
-    color: #6b7280;
-    margin-bottom: 30px;
+    color: #94a3b8;
+    margin-bottom: 40px;
+    max-width: 500px;
 }
 
-/* CARDS */
+/* CONTACT CARDS */
 .contact-card {
     display: flex;
     align-items: center;
     gap: 15px;
-    background: white;
-    padding: 15px;
+
+    background: rgba(255,255,255,0.05); /* 👈 dark glass */
+    border: 1px solid rgba(255,255,255,0.08);
+
+    padding: 18px;
     margin-bottom: 15px;
-    border-radius: 8px;
+    border-radius: 10px;
+
+    transition: 0.3s;
 }
 
+.contact-card:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-3px);
+}
+
+.contact-card span {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.contact-card p {
+    margin: 2px 0 0;
+    color: #e5e7eb;
+}
+
+/* ICON */
 .contact-card .icon {
     width: 40px;
     height: 40px;
-    background: #eef2f7;
+    background: rgba(96,165,250,0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
 /* RIGHT FORM */
@@ -344,37 +368,52 @@ body::before {
     display: block;
     font-size: 12px;
     margin: 10px 0 5px;
-    color: #6b7280;
+    color: #94a3b8;
 }
 
+/* INPUT FIELDS */
 .connect-right input,
 .connect-right textarea {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #d1d5db;
-    margin-bottom: 15px;
-    border-radius: 4px;
+    padding: 14px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+
+    color: white;
+}
+
+.connect-right input::placeholder,
+.connect-right textarea::placeholder {
+    color: #6b7280;
 }
 
 .connect-right textarea {
-    height: 120px;
+    height: 140px;
 }
 
 /* BUTTON */
 .send-btn {
     width: 100%;
-    padding: 15px;
+    padding: 16px;
+
     background: #142850;
     color: white;
+
     border: none;
+    border-radius: 6px;
+
+    margin-top: 10px;
     cursor: pointer;
-    font-weight: 600;
+
+    transition: 0.3s;
 }
 
 .send-btn:hover {
     background: #1b75bc;
+    box-shadow: 0 0 20px rgba(96,165,250,0.4);
 }
-
 </style>
 </head>
 
