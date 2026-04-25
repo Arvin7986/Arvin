@@ -6,9 +6,18 @@
 <title>Arvin Portfolio</title>
 
 <style>
+/* GLOBAL */
 body {
     margin: 0;
-    font-family: 'Segoe UI', Work Sans Medium;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+
+    /* 🔥 FULL GITHUB STYLE BACKGROUND */
+    background:
+      radial-gradient(80% 50% at 50% 0%, rgba(56, 139, 253, 0.25), transparent 70%),
+      radial-gradient(60% 40% at 80% 0%, rgba(88, 166, 255, 0.2), transparent 70%),
+      radial-gradient(50% 30% at 20% 0%, rgba(31, 111, 235, 0.25), transparent 70%),
+      #0d1117;
 }
 
 /* NAVBAR */
@@ -16,28 +25,27 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
-    background: #FAF3E5;
+    background: transparent;
 }
 
 .menu a {
     margin-left: 20px;
     text-decoration: none;
-    color: #333;
+    color: #c9d1d9;
     font-weight: 500;
 }
 
 /* HERO */
 .hero {
     display: flex;
-    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px;
 }
 
-/* LEFT */
+/* LEFT CONTENT */
 .left {
     width: 55%;
-    background: linear-gradient(135deg, #0f1c3f, #142850);
-    color: white;
-    padding: 80px;
 }
 
 .tag {
@@ -76,48 +84,51 @@ body {
     padding: 12px 20px;
     margin-right: 10px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 .primary {
-    background: #3b82f6;
+    background: #238636;
     color: white;
 }
 
 .outline {
-    border: 1px solid white;
+    border: 1px solid #c9d1d9;
     color: white;
 }
 
-/* RIGHT */
+/* RIGHT STATS */
 .right {
-    width: 45%;
-    background: #FAF3E5;
-    padding: 80px;
+    width: 40%;
 }
 
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .card {
-    padding: 40px;
+    padding: 30px;
     text-align: center;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
 }
 
-.light {
-    background: #f8f8f8;
+.card h2 {
+    margin: 0;
+    font-size: 28px;
 }
 
-.dark {
-    background: #0f1c3f;
-    color: white;
+.card p {
+    margin-top: 5px;
+    color: #94a3b8;
 }
 
 .location {
     margin-top: 20px;
-    color: #64748b;
+    color: #8b949e;
 }
 </style>
 </head>
@@ -125,7 +136,7 @@ body {
 <body>
 
 <nav class="navbar">
-    <div class="logo" style="font-weight: Medium;">CV</div>
+    <div class="logo" style="font-weight:600;">CV</div>
     <div class="menu">
         <a href="#">SKILLS</a>
         <a href="#">PROJECTS</a>
@@ -158,19 +169,19 @@ body {
 
     <div class="right">
         <div class="grid">
-            <div class="card light">
+            <div class="card">
                 <h2>5+</h2>
                 <p>PROJECTS</p>
             </div>
-            <div class="card dark">
+            <div class="card">
                 <h2>10+</h2>
                 <p>TOOLS USED</p>
             </div>
-            <div class="card dark">
+            <div class="card">
                 <h2>7+</h2>
                 <p>YEARS EXP</p>
             </div>
-            <div class="card light">
+            <div class="card">
                 <h2>95%</h2>
                 <p>COMPLIANCE RATE</p>
             </div>
