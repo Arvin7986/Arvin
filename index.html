@@ -449,6 +449,22 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+    // REVEAL + TIMELINE
+window.addEventListener('scroll',()=>{
+document.querySelectorAll('.reveal').forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight-100)
+el.classList.add('active');
+});
+
+document.querySelectorAll('.timeline-item').forEach((el,i)=>{
+if(el.getBoundingClientRect().top < window.innerHeight-50){
+setTimeout(()=>{
+el.style.opacity=1;
+el.style.transform="translateY(0)";
+},i*200);
+}
+});
+});
 </script>
 
 </body>
