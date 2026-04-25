@@ -431,6 +431,27 @@ body::before {
     background: #1b75bc;
     box-shadow: 0 0 20px rgba(96,165,250,0.4);
 }
+.footer {
+    background: #142850; /* 👈 same dark blue */
+    color: #9CA3AF;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 60px;
+    font-size: 14px;
+}
+
+/* LEFT */
+.footer-left {
+    letter-spacing: 0.5px;
+}
+
+/* RIGHT */
+.footer-right {
+    letter-spacing: 0.5px;
+}
 </style>
 </head>
 
@@ -709,8 +730,18 @@ el.style.transform="translateY(0)";
 },i*200);
 }
 });
-});
 </script>
+<footer class="footer">
+
+    <div class="footer-left">
+        © 2026 Arvin Dsouza
+    </div>
+
+    <div class="footer-right">
+        Bengaluru, Karnataka, India
+    </div>
+
+</footer>
 
 </body>
 </html>
