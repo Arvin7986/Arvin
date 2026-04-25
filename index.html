@@ -20,7 +20,7 @@ body {
       #0d1117;
 }
 
-/* 🔥 TOP LINE */
+/* ===== TOP LINE ===== */
 body::before {
     content: "";
     position: fixed;
@@ -62,6 +62,7 @@ body::before {
 }
 
 .left { width: 55%; }
+.right { width: 40%; }
 
 /* TAG */
 .tag {
@@ -105,17 +106,55 @@ body::before {
 .desc { color: #94a3b8; max-width: 420px; }
 
 /* BUTTONS */
+.buttons { margin-top: 20px; }
+
 .btn {
     padding: 12px 20px;
     border-radius: 6px;
     margin-right: 10px;
     text-decoration: none;
+    display: inline-block;
 }
 
 .primary { background: #238636; color: white; }
 .outline { border: 1px solid #c9d1d9; color: white; }
 
-/* ===== SKILLS SECTION ===== */
+/* ===== RIGHT STATS ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.stat-card {
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.08);
+}
+
+.stat-card h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.stat-card p {
+    color: #94a3b8;
+}
+
+.location {
+    margin-top: 20px;
+    color: #8b949e;
+}
+
+/* ===== SKILLS ===== */
 .skills-section {
     padding: 100px 80px;
 }
@@ -139,7 +178,6 @@ body::before {
     border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* CARD */
 .skill {
     padding: 40px;
     border-right: 1px solid rgba(255,255,255,0.08);
@@ -162,7 +200,6 @@ body::before {
     margin-bottom: 20px;
 }
 
-/* TEXT */
 .skill h4 {
     font-size: 13px;
     color: #94a3b8;
@@ -182,7 +219,7 @@ body::before {
 /* ===== MOBILE ===== */
 @media (max-width: 900px) {
     .hero { flex-direction: column; }
-    .left { width: 100%; }
+    .left, .right { width: 100%; }
     .skills-box { grid-template-columns: 1fr; }
     .skill { border-right: none; }
 }
@@ -192,6 +229,7 @@ body::before {
 
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
     <div>CV</div>
     <div class="menu">
@@ -203,8 +241,8 @@ body::before {
 
 <!-- HERO -->
 <section class="hero">
-    <div class="left">
 
+    <div class="left">
         <p class="tag">
             <span class="status-dot"></span>
             AVAILABLE FOR OPPORTUNITIES
@@ -219,12 +257,41 @@ body::before {
             and Power BI dashboards.
         </p>
 
-        <br>
-
-        <a class="btn primary" href="#">View Projects</a>
-        <a class="btn outline" href="#">Download Resume</a>
-
+        <div class="buttons">
+            <a class="btn primary" href="#">View Projects</a>
+            <a class="btn outline" href="#">Download Resume</a>
+        </div>
     </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <h2>5+</h2>
+                <p>PROJECTS</p>
+            </div>
+
+            <div class="stat-card">
+                <h2>10+</h2>
+                <p>TOOLS USED</p>
+            </div>
+
+            <div class="stat-card">
+                <h2>7+</h2>
+                <p>YEARS EXP</p>
+            </div>
+
+            <div class="stat-card">
+                <h2>95%</h2>
+                <p>COMPLIANCE RATE</p>
+            </div>
+
+        </div>
+
+        <p class="location">● Bengaluru, India</p>
+    </div>
+
 </section>
 
 <!-- SKILLS -->
