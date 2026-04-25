@@ -25,7 +25,6 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 20px 60px;
-    background: transparent;
 }
 
 .menu a {
@@ -54,10 +53,31 @@ body {
     animation: fadeUp 1s ease;
 }
 
+/* 🔥 TAG WITH BLINKING BOX */
 .tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     color: #4ade80;
     font-size: 12px;
     letter-spacing: 1px;
+}
+
+/* GREEN BLINKING BOX */
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: #4ade80;
+    border-radius: 2px;
+    box-shadow: 0 0 10px #4ade80;
+    animation: pulse 1.5s infinite;
+}
+
+/* BLINK ANIMATION */
+@keyframes pulse {
+    0%   { transform: scale(1); opacity: 1; }
+    50%  { transform: scale(1.3); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 .left h1 {
@@ -169,7 +189,7 @@ body {
     }
 }
 
-/* 📱 MOBILE RESPONSIVE */
+/* MOBILE */
 @media (max-width: 900px) {
 
     .hero {
@@ -217,11 +237,15 @@ body {
 <section class="hero">
 
     <div class="left">
-        <p class="tag">● AVAILABLE FOR OPPORTUNITIES</p>
+        <!-- ✅ UPDATED TAG -->
+        <p class="tag">
+            <span class="status-dot"></span>
+            AVAILABLE FOR OPPORTUNITIES
+        </p>
 
-        <h1><span>Arvin D'souza</span></h1>
+        <h1><span>Arvin Dsouza</span></h1>
 
-        <p class="role">L&D Specialist · Data & Learning Operation's</p>
+        <p class="role">L&D Specialist · Data & Learning Analytics</p>
 
         <p class="desc">
             L&D professional specializing in compliance training, LMS operations, 
