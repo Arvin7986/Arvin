@@ -7,20 +7,39 @@
 
 <style>
 
-/* GLOBAL */
+/* ===== GLOBAL ===== */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     color: white;
 
     background:
-      radial-gradient(80% 50% at 50% 0%, rgba(56, 139, 253, 0.25), transparent 70%),
-      radial-gradient(60% 40% at 80% 0%, rgba(88, 166, 255, 0.2), transparent 70%),
-      radial-gradient(50% 30% at 20% 0%, rgba(31, 111, 235, 0.25), transparent 70%),
+      radial-gradient(80% 50% at 50% 0%, rgba(56,139,253,0.25), transparent 70%),
+      radial-gradient(60% 40% at 80% 0%, rgba(88,166,255,0.2), transparent 70%),
+      radial-gradient(50% 30% at 20% 0%, rgba(31,111,235,0.25), transparent 70%),
       #0d1117;
 }
 
-/* NAVBAR */
+/* 🔥 TOP LINE */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #4ade80, #60a5fa, #4ade80);
+    background-size: 200% 100%;
+    animation: moveLine 3s linear infinite;
+    z-index: 9999;
+}
+
+@keyframes moveLine {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+
+/* ===== NAVBAR ===== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -34,52 +53,44 @@ body {
     font-size: 14px;
 }
 
-.menu a:hover {
-    color: white;
-}
-
-/* HERO */
+/* ===== HERO ===== */
 .hero {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 80px 60px;
     flex-wrap: wrap;
 }
 
-/* LEFT */
-.left {
-    width: 55%;
-    animation: fadeUp 1s ease;
-}
+.left { width: 55%; }
+
+/* TAG */
 .tag {
     display: flex;
     align-items: center;
     gap: 8px;
     color: #4ade80;
     font-size: 12px;
-
-    letter-spacing: 1.5px; 
-    text-transform: uppercase; 
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
-/* GREEN BLINKING BOX */
+/* BLINK DOT */
 .status-dot {
     width: 10px;
     height: 10px;
-    background: #FFFFFF;
+    background: #4ade80;
     border-radius: 2px;
     box-shadow: 0 0 10px #4ade80;
     animation: pulse 1.5s infinite;
 }
 
-/* BLINK ANIMATION */
 @keyframes pulse {
-    0%   { transform: scale(1); opacity: 1; }
-    50%  { transform: scale(1.3); opacity: 0.6; }
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.6; }
     100% { transform: scale(1); opacity: 1; }
 }
 
+/* TEXT */
 .left h1 {
     font-size: 70px;
     margin: 10px 0;
@@ -87,162 +98,119 @@ body {
 
 .left h1 span {
     color: #60a5fa;
-    font-style: italic;
     text-shadow: 0 0 40px rgba(96,165,250,0.6);
 }
 
-.role {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #cbd5e1;
-}
-
-.desc {
-    margin-top: 20px;
-    max-width: 420px;
-    color: #94a3b8;
-}
+.role { color: #cbd5e1; }
+.desc { color: #94a3b8; max-width: 420px; }
 
 /* BUTTONS */
-.buttons {
-    margin-top: 30px;
-}
-
 .btn {
-    padding: 12px 22px;
-    margin-right: 12px;
-    text-decoration: none;
+    padding: 12px 20px;
     border-radius: 6px;
-    font-size: 14px;
-    transition: all 0.3s ease;
+    margin-right: 10px;
+    text-decoration: none;
 }
 
-.primary {
-    background: #238636;
-    color: white;
+.primary { background: #238636; color: white; }
+.outline { border: 1px solid #c9d1d9; color: white; }
+
+/* ===== SKILLS SECTION ===== */
+.skills-section {
+    padding: 100px 80px;
 }
 
-.primary:hover {
-    background: #2ea043;
+.skills-sub {
+    color: #4ade80;
+    font-size: 12px;
+    letter-spacing: 2px;
 }
 
-.outline {
-    border: 1px solid #c9d1d9;
-    color: white;
+.skills-title {
+    font-size: 48px;
+    margin-top: 10px;
 }
 
-.outline:hover {
-    background: rgba(255,255,255,0.05);
-}
-
-/* RIGHT */
-.right {
-    width: 40%;
-    animation: fadeUp 1.2s ease;
-}
-
-.grid {
+/* GRID */
+.skills-box {
+    margin-top: 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* CARDS */
-.card {
-    padding: 30px;
-    text-align: center;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(12px);
-    transition: all 0.3s ease;
+/* CARD */
+.skill {
+    padding: 40px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    background: rgba(255,255,255,0.08);
+.skill:nth-child(3n) {
+    border-right: none;
 }
 
-.card h2 {
-    margin: 0;
-    font-size: 28px;
+/* ICON */
+.icon-box {
+    width: 40px;
+    height: 40px;
+    background: rgba(59,130,246,0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-.card p {
-    margin-top: 6px;
+/* TEXT */
+.skill h4 {
+    font-size: 13px;
     color: #94a3b8;
 }
 
-.location {
-    margin-top: 20px;
-    color: #8b949e;
+/* TAGS */
+.tags span {
+    display: inline-block;
+    padding: 6px 10px;
+    margin: 5px;
+    font-size: 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
 }
 
-/* ANIMATION */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* MOBILE */
+/* ===== MOBILE ===== */
 @media (max-width: 900px) {
-
-    .hero {
-        flex-direction: column;
-        padding: 40px 20px;
-    }
-
-    .left, .right {
-        width: 100%;
-    }
-
-    .left h1 {
-        font-size: 42px;
-    }
-
-    .navbar {
-        padding: 15px 20px;
-    }
-
-    .menu a {
-        margin-left: 15px;
-        font-size: 12px;
-    }
-
-    .grid {
-        margin-top: 40px;
-    }
+    .hero { flex-direction: column; }
+    .left { width: 100%; }
+    .skills-box { grid-template-columns: 1fr; }
+    .skill { border-right: none; }
 }
 
 </style>
 </head>
+
 <body>
 
 <nav class="navbar">
-    <div class="logo" style="font-weight:600;">CV</div>
+    <div>CV</div>
     <div class="menu">
         <a href="#">SKILLS</a>
         <a href="#">PROJECTS</a>
-        <a href="#">EDUCATION</a>
         <a href="#">CONTACT</a>
     </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-
     <div class="left">
-        <!-- ✅ UPDATED TAG -->
+
         <p class="tag">
             <span class="status-dot"></span>
             AVAILABLE FOR OPPORTUNITIES
         </p>
 
-        <h1><span>Arvin D'souza</span></h1>
+        <h1><span>Arvin Dsouza</span></h1>
 
         <p class="role">L&D Specialist · Data & Learning Analytics</p>
 
@@ -251,33 +219,70 @@ body {
             and Power BI dashboards.
         </p>
 
-        <div class="buttons">
-            <a class="btn primary" href="#">View Projects</a>
-            <a class="btn outline" href="#">Download Resume</a>
-        </div>
+        <br>
+
+        <a class="btn primary" href="#">View Projects</a>
+        <a class="btn outline" href="#">Download Resume</a>
+
     </div>
+</section>
 
-    <div class="right">
-        <div class="grid">
-            <div class="card">
-                <h2>5+</h2>
-                <p>PROJECTS</p>
-            </div>
-            <div class="card">
-                <h2>10+</h2>
-                <p>TOOLS USED</p>
-            </div>
-            <div class="card">
-                <h2>7+</h2>
-                <p>YEARS EXP</p>
-            </div>
-            <div class="card">
-                <h2>97%</h2>
-                <p>COMPLIANCE RATE</p>
+<!-- SKILLS -->
+<section class="skills-section">
+
+    <p class="skills-sub">WHAT I WORK WITH</p>
+    <h2 class="skills-title">Technical Skills</h2>
+
+    <div class="skills-box">
+
+        <div class="skill">
+            <div class="icon-box">☁️</div>
+            <h4>CLOUD PLATFORMS</h4>
+            <div class="tags">
+                <span>AWS EC2</span><span>AWS RDS</span><span>AWS S3</span>
             </div>
         </div>
 
-        <p class="location">● Bengaluru, India</p>
+        <div class="skill">
+            <div class="icon-box">⚙️</div>
+            <h4>DEVOPS</h4>
+            <div class="tags">
+                <span>CI/CD</span><span>GitHub Actions</span>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="icon-box">📦</div>
+            <h4>CONTAINERS</h4>
+            <div class="tags">
+                <span>Docker</span><span>Nginx</span>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="icon-box">{ }</div>
+            <h4>PROGRAMMING</h4>
+            <div class="tags">
+                <span>Python</span><span>Power BI</span>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="icon-box">🔗</div>
+            <h4>VERSION CONTROL</h4>
+            <div class="tags">
+                <span>Git</span><span>GitHub</span>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="icon-box">■</div>
+            <h4>OPERATING SYSTEMS</h4>
+            <div class="tags">
+                <span>Windows</span><span>Linux</span>
+            </div>
+        </div>
+
     </div>
 
 </section>
