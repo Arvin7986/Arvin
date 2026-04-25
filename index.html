@@ -6,13 +6,13 @@
 <title>Arvin Portfolio</title>
 
 <style>
+
 /* GLOBAL */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     color: white;
 
-    /* 🔥 FULL GITHUB STYLE BACKGROUND */
     background:
       radial-gradient(80% 50% at 50% 0%, rgba(56, 139, 253, 0.25), transparent 70%),
       radial-gradient(60% 40% at 80% 0%, rgba(88, 166, 255, 0.2), transparent 70%),
@@ -24,15 +24,19 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 20px 50px;
+    padding: 20px 60px;
     background: transparent;
 }
 
 .menu a {
-    margin-left: 20px;
+    margin-left: 25px;
     text-decoration: none;
     color: #c9d1d9;
-    font-weight: 500;
+    font-size: 14px;
+}
+
+.menu a:hover {
+    color: white;
 }
 
 /* HERO */
@@ -40,17 +44,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px;
+    padding: 80px 60px;
+    flex-wrap: wrap;
 }
 
-/* LEFT CONTENT */
+/* LEFT */
 .left {
     width: 55%;
+    animation: fadeUp 1s ease;
 }
 
 .tag {
     color: #4ade80;
     font-size: 12px;
+    letter-spacing: 1px;
 }
 
 .left h1 {
@@ -61,6 +68,7 @@ body {
 .left h1 span {
     color: #60a5fa;
     font-style: italic;
+    text-shadow: 0 0 40px rgba(96,165,250,0.6);
 }
 
 .role {
@@ -71,7 +79,7 @@ body {
 
 .desc {
     margin-top: 20px;
-    max-width: 400px;
+    max-width: 420px;
     color: #94a3b8;
 }
 
@@ -81,10 +89,12 @@ body {
 }
 
 .btn {
-    padding: 12px 20px;
-    margin-right: 10px;
+    padding: 12px 22px;
+    margin-right: 12px;
     text-decoration: none;
     border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
 }
 
 .primary {
@@ -92,14 +102,23 @@ body {
     color: white;
 }
 
+.primary:hover {
+    background: #2ea043;
+}
+
 .outline {
     border: 1px solid #c9d1d9;
     color: white;
 }
 
-/* RIGHT STATS */
+.outline:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* RIGHT */
 .right {
     width: 40%;
+    animation: fadeUp 1.2s ease;
 }
 
 .grid {
@@ -108,12 +127,19 @@ body {
     gap: 20px;
 }
 
+/* CARDS */
 .card {
     padding: 30px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 12px;
     background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.08);
 }
 
 .card h2 {
@@ -122,7 +148,7 @@ body {
 }
 
 .card p {
-    margin-top: 5px;
+    margin-top: 6px;
     color: #94a3b8;
 }
 
@@ -130,6 +156,49 @@ body {
     margin-top: 20px;
     color: #8b949e;
 }
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .left h1 {
+        font-size: 42px;
+    }
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .menu a {
+        margin-left: 15px;
+        font-size: 12px;
+    }
+
+    .grid {
+        margin-top: 40px;
+    }
+}
+
 </style>
 </head>
 
@@ -150,11 +219,9 @@ body {
     <div class="left">
         <p class="tag">● AVAILABLE FOR OPPORTUNITIES</p>
 
-        <h1>
-            <span>Arvin D'souza</span>
-        </h1>
+        <h1><span>Arvin D'souza</span></h1>
 
-        <p class="role">L&D Specialist · Data & Learning Operations</p>
+        <p class="role">L&D Specialist · Data & Learning Operation's</p>
 
         <p class="desc">
             L&D professional specializing in compliance training, LMS operations, 
