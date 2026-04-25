@@ -50,8 +50,9 @@ body::before {
     justify-content: space-between;
     padding: 20px 60px;
 
-    background: #FAF3E5; /* 👈 your color */
-    color: #0d1117; /* dark text for contrast */
+    background: rgba(250, 243, 229, 0.4); /* 👈 glass color */
+    backdrop-filter: blur(12px);          /* 👈 blur effect */
+    -webkit-backdrop-filter: blur(12px);  /* Safari support */
 
     z-index: 1000;
 }
