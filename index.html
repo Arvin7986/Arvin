@@ -697,7 +697,7 @@ html {
             <h2 class="connect-title">Let's Connect</h2>
 
             <p class="connect-desc">
-                I'm actively looking for entry-level DevOps and cloud infrastructure roles. 
+                I'm actively looking for Learning Specialist and LMS Operations roles. 
                 If you're building something interesting or have an opportunity, I'd love to hear from you.
             </p>
 
@@ -722,16 +722,22 @@ html {
         <!-- RIGHT SIDE FORM -->
         <div class="connect-right">
 
-            <label>NAME</label>
-            <input type="text" placeholder="Your name">
+    <form id="contact-form">
 
-            <label>EMAIL</label>
-            <input type="email" placeholder="your@email.com">
+        <label>NAME</label>
+        <input type="text" name="name" placeholder="Your name" required>
 
-            <label>MESSAGE</label>
-            <textarea placeholder="Tell me about the opportunity..."></textarea>
+        <label>EMAIL</label>
+        <input type="email" name="email" placeholder="your@email.com" required>
 
-            <button class="send-btn">SEND MESSAGE →</button>
+        <label>MESSAGE</label>
+        <textarea name="message" placeholder="Tell me about the opportunity..." required></textarea>
+
+        <button type="submit" class="send-btn">SEND MESSAGE →</button>
+
+    </form>
+
+</div>
 
         </div>
 
@@ -809,6 +815,30 @@ el.style.transform="translateY(0)";
 },i*200);
 }
 });
+});
+</script>
+</section>  <!-- your contact section ends -->
+
+<!-- EMAILJS SCRIPT START -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("YOUR_PUBLIC_KEY");
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        this
+    ).then(function() {
+        alert("Message sent successfully!");
+    }, function(error) {
+        alert("Failed!");
+    });
 });
 </script>
 </body>
