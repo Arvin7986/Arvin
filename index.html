@@ -824,15 +824,15 @@ el.style.transform="translateY(0)";
 
 <script>
 (function(){
-    emailjs.init("YOUR_PUBLIC_KEY");
+    emailjs.init("k1AuXs86kdLiSB2k4");
 })();
 
 document.getElementById("contact-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
     emailjs.sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_7tnvkya",
+        "template_tzme3fm",
         this
     ).then(function() {
         alert("Message sent successfully!");
