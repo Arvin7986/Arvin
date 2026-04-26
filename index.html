@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H80R4D65J0"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-H80R4D65J0');
+</script>
+    
 <title>Arvin Portfolio</title>
 
 <style>
@@ -585,9 +594,14 @@ html {
     <div class="buttons">
     <a class="btn primary" href="#skills">
     View Skills ↓
-    <a class="btn outline" href="ARVIN 2026- CV.pdf" download>
-    Download Resume
-    </a>
+    <a class="btn outline" href="ARVIN 2026- CV.pdf" target="_blank"
+   onclick="gtag('event', 'resume_download', {
+       event_category: 'engagement',
+       event_label: 'resume'
+   });">
+   Download Resume
+</a>
+</a>
         </div>
     </div>
 
