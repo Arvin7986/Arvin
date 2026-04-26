@@ -639,9 +639,7 @@ html {
     </p>
 
 </section>
-<a href="#skills" class="scroll-indicator">
-    <span></span>
-</a>
+<a href="#" class="scroll-indicator auto-scroll"></a>
 
 <!-- SKILLS -->
 <section id="skills" class="skills-section reveal">
@@ -926,6 +924,18 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
         alert("Message sent successfully!");
     }, function(error) {
         alert("Failed!");
+    });
+});
+</script>
+<script>
+document.querySelectorAll('.auto-scroll').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        let nextSection = this.closest('section').nextElementSibling;
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });
 </script>
