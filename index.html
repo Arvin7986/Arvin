@@ -212,6 +212,38 @@ html {
     line-height: 1.7;
     margin-bottom: 15px;
 }
+.scroll-indicator {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0;
+    cursor: pointer;
+}
+
+.scroll-indicator span {
+    width: 14px;
+    height: 14px;
+    border-bottom: 2px solid rgba(255,255,255,0.6);
+    border-right: 2px solid rgba(255,255,255,0.6);
+    transform: rotate(45deg);
+
+    animation: arrowDown 1.5s infinite;
+}
+
+/* animation */
+@keyframes arrowDown {
+    0% {
+        transform: rotate(45deg) translate(0, 0);
+        opacity: 0.4;
+    }
+    50% {
+        transform: rotate(45deg) translate(6px, 6px);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(45deg) translate(0, 0);
+        opacity: 0.4;
+    }
+}
     /* ===== EXPERIENCE ===== */
 .experience-section { padding:100px 80px; }
 
@@ -618,6 +650,9 @@ html {
     </p>
 
 </section>
+<a href="#skills" class="scroll-indicator">
+    <span></span>
+</a>
 
 <!-- SKILLS -->
 <section id="skills" class="skills-section reveal">
