@@ -214,6 +214,41 @@ html {
 /* 👇 ADD YOUR ABOUT ME */
 .about-section {
     padding: 100px 80px;
+    position: relative;   /* 👈 ADD */
+    overflow: hidden;     /* 👈 ADD */
+}
+.about-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 55%;
+    height: 100%;
+
+    background: url("image (8).png") no-repeat right center;
+    background-size: cover;
+
+    opacity: 0.25;
+    pointer-events: none;
+
+    animation: floatGrid 12s ease-in-out infinite;
+
+    /* fade effect */
+    mask-image: linear-gradient(to left, black 60%, transparent);
+    -webkit-mask-image: linear-gradient(to left, black 60%, transparent);
+}
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    right: 10%;
+
+    width: 300px;
+    height: 300px;
+
+    background: radial-gradient(circle, rgba(96,165,250,0.2), transparent);
+    filter: blur(60px);
 }
 
 .about-sub {
@@ -263,6 +298,17 @@ html {
     100% {
         transform: rotate(45deg) translate(0, 0);
         opacity: 0.4;
+    }
+}
+@keyframes floatGrid {
+    0% {
+        transform: translateY(0px) translateX(0px);
+    }
+    50% {
+        transform: translateY(-20px) translateX(-10px);
+    }
+    100% {
+        transform: translateY(0px) translateX(0px);
     }
 }
     /* ===== EXPERIENCE ===== */
