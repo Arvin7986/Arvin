@@ -62,10 +62,11 @@ body::before {
     z-index: 1000;
 }
 
-.menu a.active {
-    color: #60a5fa;
-    border-bottom: 2px solid #60a5fa;
-    padding-bottom: 4px;
+.menu a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #E5E7EB;
+    font-size: 14px;
 }
 
 .menu a:hover {
@@ -974,28 +975,6 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
         alert("Message sent successfully!");
     }, function(error) {
         alert("Failed!");
-    });
-});
-</script>
-<script>
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".menu a");
-
-window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute("id");
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
     });
 });
 </script>
