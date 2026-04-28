@@ -440,6 +440,133 @@ html {
     border: none;
 }
 
+/* ===== EDUCATION NEXT LEVEL ===== */
+
+.education-section {
+    padding: 100px 80px;
+}
+
+.edu-sub {
+    color: #4ade80;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.edu-title {
+    font-size: 48px;
+    margin: 10px 0 60px;
+}
+
+/* Vertical line */
+.edu-wrapper {
+    position: relative;
+    padding-left: 30px;
+}
+
+.edu-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 0;
+    width: 2px;
+    height: 0;
+    background: linear-gradient(to bottom, #4ade80, transparent);
+    transition: height 1s ease;
+}
+
+.edu-wrapper.active::before {
+    height: 100%;
+}
+
+/* Items */
+.edu-item {
+    position: relative;
+    margin-bottom: 60px;
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.edu-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dot */
+.edu-dot {
+    position: absolute;
+    left: -2px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: #4ade80;
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 rgba(74,222,128,0.7);
+    transition: 0.3s;
+}
+
+/* Active glow */
+.edu-item.show .edu-dot {
+    animation: pulseGlow 1.5s infinite;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(74,222,128,0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(74,222,128,0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(74,222,128,0);
+    }
+}
+
+/* Card */
+.edu-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 25px;
+    border-radius: 12px;
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.3s ease;
+}
+
+/* Hover 3D */
+.edu-card:hover {
+    transform: translateX(10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(74,222,128,0.25);
+}
+
+/* Text */
+.edu-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.edu-date {
+    font-size: 13px;
+    color: #94a3b8;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.edu-card p {
+    color: #cbd5e1;
+    margin-bottom: 5px;
+}
+
+.edu-highlight {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4ade80;
+    font-weight: 500;
+}
+
 /* ===== MOBILE ===== */
 @media (max-width: 900px) {
     .hero { flex-direction: column; }
@@ -876,6 +1003,48 @@ html {
         </div>
 
 </section>
+
+    <!-- ===== EDUCATION ===== -->
+<section class="education-section reveal" id="education">
+
+    <p class="edu-sub">ACADEMIC BACKGROUND</p>
+    <h2 class="edu-title">Education</h2>
+
+    <div class="edu-wrapper">
+
+        <!-- MBA -->
+        <div class="edu-item">
+            <div class="edu-dot"></div>
+
+            <div class="edu-card">
+                <h3>Master of Business Administration (MBA)</h3>
+                <span class="edu-date">June 2016 – July 2018</span>
+
+                <p>Specialization: Marketing & HR</p>
+                <p>SIT, Affiliated to VTU</p>
+
+                <span class="edu-highlight">CGPA: 7.2 (First Class)</span>
+            </div>
+        </div>
+
+        <!-- BBM -->
+        <div class="edu-item">
+            <div class="edu-dot"></div>
+
+            <div class="edu-card">
+                <h3>Bachelor of Business Management (BBM)</h3>
+                <span class="edu-date">July 2012 – Aug 2015</span>
+
+                <p>Specialization: Commerce</p>
+                <p>Padua College of Commerce and Management</p>
+
+                <span class="edu-highlight">Affiliated to Mangalore University</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 <section class="connect-section" id="contact">
 
     <div class="connect-container">
@@ -1029,6 +1198,30 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
         alert("Failed!");
     });
 });
+</script>
+<script>
+// ===== EDUCATION SCROLL EFFECT =====
+
+const eduItems = document.querySelectorAll('.edu-item');
+const eduWrapper = document.querySelector('.edu-wrapper');
+
+const eduObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+
+            eduWrapper.classList.add('active');
+
+            eduItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('show');
+                }, index * 300); // stagger effect
+            });
+
+        }
+    });
+}, { threshold: 0.2 });
+
+eduObserver.observe(eduWrapper);
 </script>
 </body>
 </html>
