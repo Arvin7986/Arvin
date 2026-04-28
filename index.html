@@ -442,6 +442,127 @@ html {
     border: none;
 }
 
+/* ===== RECOGNITION PREMIUM ===== */
+
+.recognition-section {
+    padding: 100px 80px;
+}
+
+.rec-sub {
+    color: #4ade80;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.rec-title {
+    font-size: 48px;
+    margin: 10px 0 50px;
+}
+
+/* GRID */
+.rec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* CARD */
+.rec-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 25px;
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* HOVER EFFECT */
+.rec-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(96,165,250,0.2);
+}
+
+/* ICON */
+.rec-thumb {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+/* TEXT */
+.rec-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.rec-card p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* MODAL */
+.rec-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+/* CONTENT */
+.modal-content {
+    position: relative;
+    text-align: center;
+}
+
+/* IMAGE */
+.rec-modal img {
+    max-width: 80vw;
+    max-height: 70vh;
+    display: none;
+}
+
+/* PDF */
+.rec-modal iframe {
+    width: 80vw;
+    height: 70vh;
+    display: none;
+    border: none;
+}
+
+/* CLOSE */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* DOWNLOAD BUTTON */
+#downloadBtn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+
+    background: #4ade80;
+    color: black;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
 /* ===== EDUCATION NEXT LEVEL ===== */
 
 .education-section {
@@ -1006,6 +1127,51 @@ html {
 
 </section>
 
+<!-- ===== RECOGNITION ===== -->
+<section class="recognition-section" id="recognition">
+
+    <p class="rec-sub">ACHIEVEMENTS</p>
+    <h2 class="rec-title">Recognition</h2>
+
+    <div class="rec-grid">
+
+        <!-- ITEM -->
+        <div class="rec-card" onclick="openModal('images/award1.png','image')">
+            <div class="rec-thumb">🏆</div>
+            <h3>Spot Award</h3>
+            <p>Recognized for outstanding performance</p>
+        </div>
+
+        <!-- ITEM -->
+        <div class="rec-card" onclick="openModal('docs/certificate.pdf','pdf')">
+            <div class="rec-thumb">📄</div>
+            <h3>Compliance Certification</h3>
+            <p>Annual security & compliance training</p>
+        </div>
+
+        <!-- ITEM -->
+        <div class="rec-card" onclick="openModal('images/appreciation.png','image')">
+            <div class="rec-thumb">⭐</div>
+            <h3>Appreciation Award</h3>
+            <p>Recognized by leadership</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MODAL -->
+<div id="recModal" class="rec-modal">
+    <span class="close-btn" onclick="closeModal()">×</span>
+
+    <div class="modal-content">
+        <img id="modalImage">
+        <iframe id="modalPDF"></iframe>
+
+        <a id="downloadBtn" target="_blank">⬇ Download</a>
+    </div>
+</div>
+
     <!-- ===== EDUCATION ===== -->
 <section class="education-section reveal" id="education">
 
@@ -1220,6 +1386,32 @@ const eduObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 eduObserver.observe(eduWrapper);
+</script>
+
+<script>
+function openModal(file, type) {
+    const modal = document.getElementById("recModal");
+    const img = document.getElementById("modalImage");
+    const pdf = document.getElementById("modalPDF");
+    const download = document.getElementById("downloadBtn");
+
+    modal.style.display = "flex";
+    download.href = file;
+
+    if (type === "image") {
+        img.src = file;
+        img.style.display = "block";
+        pdf.style.display = "none";
+    } else {
+        pdf.src = file;
+        pdf.style.display = "block";
+        img.style.display = "none";
+    }
+}
+
+function closeModal() {
+    document.getElementById("recModal").style.display = "none";
+}
 </script>
 </body>
 </html>
