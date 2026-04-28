@@ -135,7 +135,8 @@ body::before {
 /* TEXT */
 .left h1 {
     font-size: 70px;
-    margin: 0px 0;
+    margin: 0;              /* 👈 REMOVE SPACE */
+    line-height: 1.1;       /* 👈 ADD THIS */
 }
 
 .left h1 span {
@@ -145,8 +146,9 @@ body::before {
 
 .role {
     color: #cbd5e1;
-    font-size: 18px;        /* 👈 ADD */
-    letter-spacing: 0.5px;  /* 👈 ADD */
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    margin-top: 5px;   /* 👈 CONTROL GAP */
 }
 .desc {
     color: #e5e7eb;         /* 👈 CHANGE (brighter) */
