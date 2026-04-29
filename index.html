@@ -59,9 +59,13 @@ body::before {
     justify-content: space-between;
     align-items: center;
 
-    padding: 15px 40px;
+    padding: 15px 25px;
 
     z-index: 9999; /* 👈 VERY HIGH */
+}
+.navbar {
+    max-width: 1200px;   /* 👈 keeps everything inside */
+    margin: 0 auto;      /* 👈 center it */
 }
 
 .menu a {
@@ -72,8 +76,11 @@ body::before {
 .menu {
     display: flex;
     align-items: center;
-    gap: 25px;   /* 👈 ADD THIS LINE */
-    white-space: nowrap; /* 👈 prevents breaking */
+    gap: 20px;
+    white-space: nowrap;
+
+    margin-left: auto;
+    padding-right: 10px;  /* 👈 ADD THIS */
 }
 
 .menu a:hover {
@@ -82,10 +89,9 @@ body::before {
 .menu {
     margin-left: auto; /* 👈 pushes menu to right */
 }
-body {
-    overflow-x: hidden; /* 👈 hides overflow issue */
+html, body {
+    overflow-x: hidden;
 }
-
 /* ===== HERO ===== */
 .hero {
     display: flex;
