@@ -77,16 +77,12 @@ body::before {
     align-items: center;
     gap: 20px;
     white-space: nowrap;
-
     margin-left: auto;
-    padding-right: 10px;  /* 👈 ADD THIS */
+    padding-right: 10px;
 }
 
 .menu a:hover {
     color: #60a5fa; /* your blue accent */
-}
-.menu {
-    margin-left: auto; /* 👈 pushes menu to right */
 }
 html, body {
     overflow-x: hidden;
@@ -1155,6 +1151,7 @@ body {
             </a>
 
         </div>
+     </div>
 </section>
 <a href="#recognition" class="scroll-indicator">
     <span></span>
@@ -1322,8 +1319,6 @@ body {
     </div>
 
 </footer>
-</body>
-</html>
     
 <!-- ===== JS ===== -->
 <script>
@@ -1340,10 +1335,10 @@ const animateCounters = () => {
       count += increment;
 
       if (count < target) {
-        counter.innerText = Math.floor(count) + (target === 95 ? '%' : '+');
+        counter.innerText = Math.floor(count) + (target === 97 ? '%' : '+');
         requestAnimationFrame(update);
       } else {
-        counter.innerText = target + (target === 95 ? '%' : '+');
+        counter.innerText = target + (target === 97 ? '%' : '+');
       }
     };
 
