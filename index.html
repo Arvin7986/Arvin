@@ -57,9 +57,9 @@ body::before {
 
     display: flex;
     justify-content: space-between;
-    padding: 12px 5px;   /* 👈 reduce horizontal space */
-    
-    z-index: 1000;
+    align-items: center;
+    padding: 15px 40px;   /* 👈 reduce horizontal space */
+    box-sizing: border-box; /* 👈 VERY IMPORTANT */
 }
 
 .menu a {
@@ -70,12 +70,18 @@ body::before {
 .menu {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 18px;   /* 👈 ADD THIS LINE */
+    gap: 25px;   /* 👈 ADD THIS LINE */
+    white-space: nowrap; /* 👈 prevents breaking */
 }
 
 .menu a:hover {
     color: #60a5fa; /* your blue accent */
+}
+.menu {
+    margin-left: auto; /* 👈 pushes menu to right */
+}
+body {
+    overflow-x: hidden; /* 👈 hides overflow issue */
 }
 
 /* ===== HERO ===== */
