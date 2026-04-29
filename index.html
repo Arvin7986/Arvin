@@ -58,8 +58,10 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;   /* 👈 reduce horizontal space */
-    box-sizing: border-box; /* 👈 VERY IMPORTANT */
+
+    padding: 15px 40px;
+
+    z-index: 9999; /* 👈 VERY HIGH */
 }
 
 .menu a {
