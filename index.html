@@ -717,9 +717,12 @@ html {
     .skill { border-right: none; }
 }
 .connect-section {
-    background: transparent; /* 👈 matches main theme */
+    background: transparent;
     color: white;
     padding: 120px 80px;
+
+    max-width: 1200px;   /* 👈 ADD THIS */
+    margin: 0 auto;      /* 👈 CENTER CONTENT */
 }
 
 /* CONTAINER ALIGNMENT */
@@ -732,7 +735,7 @@ html {
 
 /* LEFT SIDE */
 .connect-left {
-    width: 45%;
+    flex: 1;
 }
 
 .connect-sub {
@@ -796,7 +799,7 @@ html {
 
 /* RIGHT FORM */
 .connect-right {
-    width: 50%;
+    flex: 1;
 }
 
 .connect-right label {
