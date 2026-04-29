@@ -870,6 +870,38 @@ html {
 .footer-right {
     letter-spacing: 0.5px;
 }
+.hamburger {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+
+    .menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #0f172a;
+
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
+        display: none;
+        padding: 20px 0;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
 
 </style>
 </head>
@@ -882,6 +914,9 @@ html {
         <a href="#skills">SKILLS</a>
         <a href="#projects">PROJECTS</a>
     </div>
+<div class="hamburger" onclick="toggleMenu()">
+    ☰
+</div>
 </nav>
 
 <!-- HERO -->
@@ -1442,6 +1477,11 @@ function openModal(file, type) {
 
 function closeModal() {
     document.getElementById("recModal").style.display = "none";
+}
+</script>
+<script>
+function toggleMenu() {
+    document.querySelector(".menu").classList.toggle("active");
 }
 </script>
 </body>
