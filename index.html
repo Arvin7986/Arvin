@@ -860,6 +860,9 @@ html {
     padding: 20px 60px;
     font-size: 14px;
 }
+.main-content {
+    flex: 1;
+}
 
 /* LEFT */
 .footer-left {
@@ -870,11 +873,21 @@ html {
 .footer-right {
     letter-spacing: 0.5px;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
 
 </style>
 </head>
 
 <body>
+<div class="main-content">
 
 <nav class="navbar">
     <div>CV</div>
@@ -1309,6 +1322,9 @@ html {
     </div>
 
 </footer>
+</body>
+</html>
+    
 <!-- ===== JS ===== -->
 <script>
 // COUNTERS
