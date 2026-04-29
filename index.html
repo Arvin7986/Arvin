@@ -717,25 +717,22 @@ html {
     .skill { border-right: none; }
 }
 .connect-section {
-    background: transparent;
+    background: transparent; /* 👈 matches main theme */
     color: white;
     padding: 120px 80px;
-
-    max-width: 1200px;   /* 👈 ADD THIS */
-    margin: 0 auto;      /* 👈 CENTER CONTENT */
 }
 
 /* CONTAINER ALIGNMENT */
 .connect-container {
     display: flex;
-    justify-content: space-between; /* 👈 IMPORTANT */
+    gap: 80px;
     align-items: flex-start;
-    gap: 40px;
+    justify-content: space-between;
 }
 
 /* LEFT SIDE */
 .connect-left {
-    flex: 1;
+    width: 45%;
 }
 
 .connect-sub {
@@ -799,7 +796,7 @@ html {
 
 /* RIGHT FORM */
 .connect-right {
-    flex: 1;
+    width: 50%;
 }
 
 .connect-right label {
