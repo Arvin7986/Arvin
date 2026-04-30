@@ -323,6 +323,16 @@ html {
     font-weight: 400;   /* remove bold */
     opacity: 0.85;      /* softer look */
 }
+@keyframes blinkDot {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(1.2);
+    }
+}
 
 /* ===== SKILLS ===== */
 .skills-section {
