@@ -341,13 +341,29 @@ html {
         transform: scale(1.2);
     }
 }
-
-.compliance-container {
-    display: flex;
-    gap: 100px;
-    flex-wrap: wrap;
+.compliance-header {
+    margin-bottom: 20px;
 }
 
+.compliance-header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #cbd5e1;
+    letter-spacing: 1px;
+}
+.compliance-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.compliance-header h2::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #4ade80;
+    margin-top: 6px;
+}
 /* CARD BASE */
 .flip-card {
     width: 260px;
@@ -1188,6 +1204,9 @@ html {
 </div>
 </div>
 
+</div>
+<div class="compliance-header">
+    <h2>Compliance Programs</h2>
 </div>
 <div class="compliance-container">
 
