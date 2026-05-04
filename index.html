@@ -395,26 +395,29 @@ html {
 }
 
 /* BACK STYLE */
-flip-back {
+.flip-back {
     transform: rotateY(180deg);
-    padding: 15px;
 }
-
+/* TEXT FIX */
+.flip-back ul {
+    padding-left: 16px;
+}
 .flip-back li {
     font-size: 13px;
     margin-bottom: 4px;
+    line-height: 1.4;
 }
 
 .meta {
     font-size: 12px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 .flip-front::after {
     content: "↺";
     position: absolute;
-    bottom: 10px;
-    right: 15px;
-    font-size: 14px;
+    bottom: 8px;
+    right: 12px;
+    font-size: 12px;
     color: #6b7280;
 }
 /* ===== SKILLS ===== */
@@ -1194,7 +1197,7 @@ flip-back {
 
             <!-- FRONT -->
             <div class="flip-front">
-                <h3>POSH (E-learning)</h3>
+                <h3>POSH</h3>
             </div>
 
             <!-- BACK -->
@@ -1215,7 +1218,7 @@ flip-back {
         <div class="flip-inner">
 
             <div class="flip-front">
-                <h3>Workplace Violence Prevention (WVPP)</h3>
+                <h3>WVPP</h3>
             </div>
 
             <div class="flip-back">
