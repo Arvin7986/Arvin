@@ -351,90 +351,54 @@ html {
     color: #cbd5e1;
     letter-spacing: 1px;
 }
-.compliance-container {
+.compliance-horizontal {
     display: flex;
-    gap: 100px;
-    flex-wrap: wrap;
-}
-.compliance-header h2::after {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 2px;
-    background: #4ade80;
-    margin-top: 6px;
-}
-/* CARD BASE */
-.flip-card {
-    width: 260px;
-    height: 140px;
-    perspective: 1000px;
-}
-
-/* INNER FLIP */
-.flip-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-/* HOVER TRIGGER */
-.flip-card:hover .flip-inner {
-    transform: rotateY(180deg);
-}
-
-/* FRONT & BACK */
-.flip-front, .flip-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.05);
-    backface-visibility: hidden;
-}
-
-/* FRONT STYLE */
-.flip-front {
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 15px;
-}
-.flip-front, .flip-back {
-    border: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    margin-top: 50px;
 }
 
-/* BACK STYLE */
-.flip-back {
-    transform: rotateY(180deg);
-}
-/* TEXT FIX */
-.flip-back ul {
-    padding-left: 16px;
-}
-.flip-back li {
-    font-size: 13px;
-    margin-bottom: 4px;
-    line-height: 1.4;
-}
-
-.meta {
-    font-size: 12px;
-    margin-bottom: 6px;
-}
-.flip-front::after {
-    content: "↺";
+/* LINE */
+.compliance-horizontal::before {
+    content: "";
     position: absolute;
-    bottom: 8px;
-    right: 12px;
+    top: 6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+}
+
+/* ITEM */
+.h-item {
+    position: relative;
+    text-align: center;
+    width: 200px;
+}
+.h-item:hover {
+    transform: translateY(-5px);
+}
+/* DOT */
+.h-dot {
+    width: 12px;
+    height: 12px;
+    background: #4ade80;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    position: relative;
+    z-index: 2;
+}
+
+/* CONTENT */
+.h-content h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.h-content p {
     font-size: 12px;
-    color: #6b7280;
+    color: #94a3b8;
 }
 /* ===== SKILLS ===== */
 .skills-section {
@@ -1207,127 +1171,33 @@ html {
 </div>
 <div class="compliance-header">
     <h2>Compliance Programs</h2>
+<div class="compliance-horizontal">
+
+    <div class="h-item">
+        <div class="h-dot"></div>
+        <div class="h-content">
+            <h3>POSH</h3>
+            <p>Dec 2025 · 97%</p>
+        </div>
+    </div>
+
+    <div class="h-item">
+        <div class="h-dot"></div>
+        <div class="h-content">
+            <h3>WVPP</h3>
+            <p>June 2025 · 95%</p>
+        </div>
+    </div>
+
+    <div class="h-item">
+        <div class="h-dot"></div>
+        <div class="h-content">
+            <h3>Ethics</h3>
+            <p>Global rollout</p>
+        </div>
+    </div>
+
 </div>
-<div class="compliance-container">
-
-    <!-- POSH -->
-    <div class="flip-card">
-        <div class="flip-inner">
-
-            <!-- FRONT -->
-            <div class="flip-front">
-                <h3>POSH</h3>
-            </div>
-
-            <!-- BACK -->
-            <div class="flip-back">
-                <p class="meta">Launched: Dec 5, 2025</p>
-                <ul>
-                    <li>Designed, deployed, and managed</li>
-                    <li>Audience/Region - India</li>
-                    <li><strong>completion rate - 97%</strong></li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- WVPP -->
-    <div class="flip-card">
-        <div class="flip-inner">
-
-            <div class="flip-front">
-                <h3>WVPP</h3>
-            </div>
-
-            <div class="flip-back">
-                <p class="meta">Launched: June 5, 2025</p>
-                <ul>
-                    <li>Designed, deployed, and managed</li>
-                    <li>Audience/Region - California</li>
-                    <li><strong>completion rate - 95%</strong></li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-
-<!-- ETHICS -->
-    <div class="flip-card">
-        <div class="flip-inner">
-
-            <div class="flip-front">
-                <h3>Ethics</h3>
-            </div>
-
-            <div class="flip-back">
-                <p class="meta">Launched: June 5, 2025</p>
-                <ul>
-                    <li>Designed, deployed, and managed</li>
-                    <li>Audience/Region - Global</li>
-                    <li><strong>completion rate - 98%</strong></li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-<!-- ETHICS -->
-    <div class="flip-card">
-        <div class="flip-inner">
-
-            <div class="flip-front">
-                <h3>Ethics</h3>
-            </div>
-
-            <div class="flip-back">
-                <p class="meta">Launched: June 5, 2025</p>
-                <ul>
-                    <li>Designed, deployed, and managed</li>
-                    <li>Audience/Region - Global</li>
-                    <li><strong>completion rate - 98%</strong></li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-<!-- Harassment -->
-    <div class="flip-card">
-        <div class="flip-inner">
-
-            <div class="flip-front">
-                <h3>Harassment</h3>
-            </div>
-
-            <div class="flip-back">
-                <p class="meta">Launched: June 5, 2025</p>
-                <ul>
-                    <li>Designed, deployed, and managed</li>
-                    <li>Audience/Region - Global</li>
-                    <li><strong>completion rate - 98%</strong></li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-<!-- IT -->
-    <div class="flip-card">
-        <div class="flip-inner">
-
-            <div class="flip-front">
-                </h3>IT Privacy and security</h3>
-            </div>
-
-            <div class="flip-back">
-                <p class="meta">Launched: June 5, 2025</p>
-                <ul>
-                    <li>Designed, deployed, and managed</li>
-                    <li>Audience/Region - Global</li>
-                    <li><strong>completion rate - 98%</strong></li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
 
 </div>    
 </section>
