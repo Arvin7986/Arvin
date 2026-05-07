@@ -281,6 +281,50 @@ html {
         transform: translateY(0px) translateX(0px);
     }
 }
+
+/* ===== HOW I WORK ===== */
+
+.work-style-section {
+    padding: 100px 80px;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.work-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 30px;
+    transition: 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.work-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(96,165,250,0.4);
+    box-shadow: 0 0 25px rgba(96,165,250,0.15);
+}
+
+.work-icon {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.work-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.work-card p {
+    color: #94a3b8;
+    line-height: 1.6;
+    font-size: 14px;
+}
     /* ===== EXPERIENCE ===== */
 .experience-section { padding:70px 80px; }
 
@@ -1085,6 +1129,49 @@ html {
         </div>
 
     </div>
+
+<section class="work-style-section reveal">
+
+    <p class="exp-sub">HOW I WORK</p>
+    <h2 class="exp-title">What I Bring</h2>
+
+    <div class="work-grid">
+
+        <div class="work-card">
+            <div class="work-icon">🎯</div>
+            <h3>Learning Strategy</h3>
+            <p>
+                Designing impactful learning journeys aligned with business goals and learner engagement.
+            </p>
+        </div>
+
+        <div class="work-card">
+            <div class="work-icon">💻</div>
+            <h3>LMS Operations</h3>
+            <p>
+                Managing LMS governance, reporting, compliance tracking, and global training operations.
+            </p>
+        </div>
+
+        <div class="work-card">
+            <div class="work-icon">📊</div>
+            <h3>Analytics</h3>
+            <p>
+                Building Power BI dashboards and transforming learning data into actionable insights.
+            </p>
+        </div>
+
+        <div class="work-card">
+            <div class="work-icon">⚙️</div>
+            <h3>Automation</h3>
+            <p>
+                Streamlining workflows, reporting processes, and training operations using smart tools.
+            </p>
+        </div>
+
+    </div>
+
+</section>
 
 </section>
 <a href="#experience" class="scroll-indicator">
