@@ -292,9 +292,11 @@ html {
 
 .work-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+    gap: 24px;
     margin-top: 40px;
+    justify-content: center;
+    align-items: stretch;
 }
 .work-card {
     background: rgba(255,255,255,0.05);
@@ -328,13 +330,13 @@ html {
     font-size: 14px;
 }
 .work-heading {
-    margin-left: -20px;
+    margin-left: 0;
 }
 .container {
     width: 100%;
-    max-width: 1600px;
-    margin: auto;
-    padding: 0 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
     box-sizing: border-box;
 }
     /* ===== EXPERIENCE ===== */
