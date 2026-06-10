@@ -499,15 +499,20 @@ html {
 /* GRID */
 .skills-box { 
     margin-top: 50px; display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    border: 8px solid #E5E7EB;
-    background: white;
-    border-radius: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    Background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
 }
 .skill {
-    padding: 40px;
-    border-right: 8px solid #E5E7EB;
-    border-bottom: 8px solid #E5E7EB;
+    padding: 32px;
+    background: white;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
 }
 
 .skill:nth-child(3n) {
