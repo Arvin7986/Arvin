@@ -54,11 +54,18 @@ body::before {
 .menu a {
     margin-left: 20px;
     text-decoration: none;
-    color: #c9d1d9;
-    font-weight: 500;
+    color: #666666;
+    font-weight: 600;
 }
 .menu a:hover {
-    color: #8AB4FF; /* your blue accent */
+    color: #0A66C2; /* your blue accent */
+}
+.navbar {
+    background: white;
+    border-bottom: 1px solid #E5E7EB;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 html, body {
@@ -66,10 +73,12 @@ html, body {
 }
 /* ===== HERO ===== */
 .hero {
-    display: flex;
-    justify-content: space-between;
-    padding: 60px 60px;
-    flex-wrap: wrap;
+
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    margin: 40px;
+    padding: 50px;
 }
 
 .left { width: 55%; }
@@ -121,7 +130,8 @@ html, body {
 /* TEXT */
 .left h1 {
     color: #FAF3E5;
-    font-size: 74px;
+    font-size: 58px;
+    font-weight: 700;
     margin: 0;              /* 👈 REMOVE SPACE */
     line-height: 1.1;       /* 👈 ADD THIS */
 }
@@ -131,12 +141,6 @@ html, body {
     font-style: normal;
     text-shadow: none;
 }
-
-text-shadow:
-0 0 20px rgba(138,180,255,.20),
-0 0 40px rgba(138,180,255,.12);
-}
-
 .hero-role {
     color: #666666;
     font-size: 16px;
@@ -195,7 +199,7 @@ html {
     border: 1px solid #E5E7EB;
 
     box-shadow:
-    0 1px 3px rgba(0,0,0,.08);
+    0 2px 8px rgba(0,0,0,.06);
     backdrop-filter: blur(12px); transition: 0.3s; 
 }
 
@@ -223,7 +227,7 @@ html {
 }
 
 .about-sub {
-    color: #22C55E;
+    color: #0A66C2;
     font-size: 12px;
     letter-spacing: 2px;
 }
@@ -351,7 +355,7 @@ html {
 .experience-section { padding:70px 80px; }
 
 .exp-sub {
-    color: #22C55E;
+    color: #0A66C2;
     font-size: 12px;
     letter-spacing: 2px;
 }
@@ -366,7 +370,7 @@ html {
 
 .timeline {
     margin-top:50px;
-    border-left:2px solid rgba(255,255,255,0.1);
+    border-left:2px solid #D1D5DB;
     padding-left:30px;
 }
 
@@ -395,7 +399,7 @@ html {
     margin-bottom: 2px;
 }
 .timeline-content .role {
-    color: #ffffff;   /* 👈 CHANGE HERE */
+    color: #191919;   /* 👈 CHANGE HERE */
     font-size: 15px;
     font-weight: 400;
     opacity: 1;       /* 👈 IMPORTANT (remove faded look) */
@@ -482,7 +486,7 @@ html {
 }
 
 .skills-sub {
-    color: #22C55E;
+    color: #0A66C2;
     font-size: 12px;
     letter-spacing: 2px;
 }
@@ -533,7 +537,10 @@ html {
     padding: 6px 10px;
     margin: 5px;
     font-size: 12px;
-    background: rgba(255,255,255,0.04);
+    background: #EEF3F8;
+    color: #0A66C2;
+    border: none;
+    font-weight: 600;
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 6px;
 }
@@ -555,7 +562,7 @@ html {
 
 /* PROJECT HEADINGS */
 .proj-sub {
-    color: #22C55E;
+    color: #0A66C2;
     font-size: 12px;
     letter-spacing: 2px;
 }
@@ -602,7 +609,7 @@ html {
 }
 
 .rec-sub {
-    color: #22C55E;
+    color: #0A66C2;
     font-size: 12px;
     letter-spacing: 2px;
 }
@@ -724,7 +731,7 @@ html {
 }
 
 .edu-sub {
-    color: #22C55E;
+    color: #0A66C2;
     font-size: 12px;
     letter-spacing: 2px;
 }
@@ -846,7 +853,7 @@ html {
 .connect-section {
     background: transparent;
     background: transparent; /* 👈 matches main theme */
-    color: white;
+    color: #191919;
     padding: 120px 80px;
 }
 
@@ -864,7 +871,7 @@ html {
 }
 
 .connect-sub {
-    color: #22C55E;
+    color: #0A66C2;
     font-size: 12px;
     letter-spacing: 2px;
 }
@@ -906,7 +913,7 @@ box-shadow:
 
 .contact-card p {
     margin: 2px 0 0;
-    color: #e5e7eb;
+    color: #191919;
 }
 
 /* ICON */
@@ -938,11 +945,11 @@ box-shadow:
     width: 100%;
     padding: 14px;
 
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 6px;
+    background: white;
 
-    color: white;
+    border: 1px solid #D1D5DB;
+
+    color: #191919;
 }
 
 .connect-right input::placeholder,
@@ -959,7 +966,7 @@ box-shadow:
     width: 100%;
     padding: 16px;
 
-    background: #142850;
+    background: #0A66C2
     color: white;
 
     border: none;
@@ -972,7 +979,7 @@ box-shadow:
 }
 
 .send-btn:hover {
-    background: #1b75bc;
+    background: #004182;
     box-shadow: 0 0 20px rgba(96,165,250,0.4);
 }
 
