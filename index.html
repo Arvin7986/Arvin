@@ -20,18 +20,8 @@ gtag('config', 'G-H80R4D65J0');
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    color: black;
-
-background:
-radial-gradient(circle at top center,
-rgba(124,157,255,.20),
-transparent 55%),
-
-radial-gradient(circle at 20% 10%,
-rgba(59,130,246,.12),
-transparent 45%),
-
-#0B1120;
+    color: #191919;
+    background: #F3F2EF;
 }
 
 /* ===== TOP LINE ===== */
@@ -137,8 +127,10 @@ html, body {
 }
 
 .left h1 span {
-color:#8AB4FF;
-font-style:italic;
+    color: #191919;
+    font-style: normal;
+    text-shadow: none;
+}
 
 text-shadow:
 0 0 20px rgba(138,180,255,.20),
@@ -146,7 +138,7 @@ text-shadow:
 }
 
 .hero-role {
-    color: #e5e7eb;
+    color: #666666;
     font-size: 16px;
     letter-spacing: 0.5px;
     margin-top: 5px;
@@ -158,7 +150,7 @@ text-shadow:
 }
 .mini-proof {
     font-size: 13px;
-    color: #CBD5E1;
+    color: #666666;
     margin-top: 8px;
 }
 
@@ -178,8 +170,8 @@ text-shadow:
     box-shadow: 0 0 20px rgba(96,165,250,0.5);
 }
 
-.primary { background: #2563EB; color: white; }
-.outline { border: 1px solid #c9d1d9; color: white; }
+.primary { background: #0A66C2; color: white; }
+.outline { border: 1px solid #0A66C2; color: white; }
 
 html {
     scroll-behavior: smooth;
@@ -196,14 +188,14 @@ html {
 }
 
 .stat-card {
-background: rgba(15,23,42,.75);
+    padding: 30px;
+    text-align: center;
+    border-radius: 16px;
+    background: white;
+    border: 1px solid #E5E7EB;
 
-border:1px solid rgba(124,157,255,.12);
-
-box-shadow:
-0 10px 30px rgba(0,0,0,.20);
-
-backdrop-filter:blur(12px);
+    box-shadow:
+    0 1px 3px rgba(0,0,0,.08);
 }
 
 .stat-card:hover {
@@ -242,7 +234,7 @@ backdrop-filter:blur(12px);
 
 .about-text {
     max-width: 700px;
-    color: #CBD5E1;
+    color: #666666;
     line-height: 1.7;
     margin-bottom: 15px;
 }
@@ -308,12 +300,11 @@ backdrop-filter:blur(12px);
     align-items: stretch;
 }
 .work-card {
-background: rgba(15,23,42,.75);
+    background: white;
+    border: 1px solid #E5E7EB;
 
-border:1px solid rgba(124,157,255,.12);
-
-box-shadow:
-0 8px 24px rgba(0,0,0,.18);
+    box-shadow:
+    0 1px 3px rgba(0,0,0,.08);
 }
 
 .work-card:hover {
@@ -394,7 +385,7 @@ box-shadow:
 .timeline-content li {
     font-family: 'Segoe UI', sans-serif;
     font-size: 14px;        /* 👈 increase size */
-    color: #CBD5E1;        /* 👈 exact soft grey */
+    color: #666666;        /* 👈 exact soft grey */
     line-height: 1.6;       /* 👈 better spacing */
     margin-bottom: 2px;
 }
@@ -498,16 +489,14 @@ box-shadow:
 
 /* GRID */
 .skills-box {
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid #E5E7EB;
+    background: white;
+    border-radius: 16px;
 }
 
 .skill {
-    padding: 40px;
-    border-right: 1px solid rgba(255,255,255,0.08);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-right: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
 }
 
 .skill:nth-child(3n) {
@@ -575,9 +564,11 @@ box-shadow:
 }
 
 .project-card {
-    background: rgba(255,255,255,0.05);
-    padding: 30px;
-    border-radius: 10px;
+    background: white;
+    border: 1px solid #E5E7EB;
+
+    box-shadow:
+    0 1px 3px rgba(0,0,0,.08);
 }
 
 /* PDF BOX */
@@ -622,12 +613,11 @@ box-shadow:
 
 /* CARD */
 .rec-card {
-background: rgba(15,23,42,.75);
+    background: white;
+    border: 1px solid #E5E7EB;
 
-border:1px solid rgba(124,157,255,.12);
-
-box-shadow:
-0 8px 24px rgba(0,0,0,.18);
+    box-shadow:
+    0 1px 3px rgba(0,0,0,.08);
 }
 
 /* HOVER EFFECT */
@@ -800,12 +790,11 @@ box-shadow:
 
 /* Card */
 .edu-card {
-background: rgba(15,23,42,.75);
+    background: white;
+    border: 1px solid #E5E7EB;
 
-border:1px solid rgba(124,157,255,.12);
-
-box-shadow:
-0 8px 24px rgba(0,0,0,.18);
+    box-shadow:
+    0 1px 3px rgba(0,0,0,.08);
 }
 
 /* Hover 3D */
@@ -877,13 +866,11 @@ box-shadow:
 
 /* CONTACT CARDS */
 .contact-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+background: white;
+border: 1px solid #E5E7EB;
 
-    background: rgba(255,255,255,0.05); /* 👈 dark glass */
-    border: 1px solid rgba(255,255,255,0.08);
-
+box-shadow:
+0 1px 3px rgba(0,0,0,.08);
     padding: 18px;
     margin-bottom: 15px;
     border-radius: 10px;
@@ -972,9 +959,10 @@ box-shadow:
     background: #1b75bc;
     box-shadow: 0 0 20px rgba(96,165,250,0.4);
 }
+
 .footer {
-    background: #142850; /* 👈 same dark blue */
-    color: #9CA3AF;
+background: white;
+border-top: 1px solid #E5E7EB;
 
     display: flex;
     justify-content: space-between;
